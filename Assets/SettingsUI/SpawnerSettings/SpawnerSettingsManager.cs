@@ -7,16 +7,29 @@ using UnityEngine.SceneManagement;
 public class SpawnerSettingsManager : MonoBehaviour
 {
     [SerializeField] Slider setSpawnerNumSlider;
-    [SerializeField] GameObject setting1;
-    [SerializeField] GameObject setting2;
-    [SerializeField] GameObject setting3;
 
+    
+    [Header("settings1")]
+    [SerializeField] GameObject setting1GameObject;
+    [SerializeField] Dropdown spawerType1Dropdown;
+    //data                              
     [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData1;
-    [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData2;
-    [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData3;
-
     [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawnerData1;
+                                        
+                                        
+    [Header("settings2")]               
+    [SerializeField] GameObject setting2GameObject;
+    [SerializeField] Dropdown spawerType2Dropdown;
+    //data                              
+    [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData2;
     [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawnerData2;
+                                        
+                                        
+    [Header("settings3")]               
+    [SerializeField] GameObject setting3GameObject;
+    [SerializeField] Dropdown spawerType3Dropdown;
+    //data
+    [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData3;
     [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawnerData3;
 
 
@@ -28,21 +41,21 @@ public class SpawnerSettingsManager : MonoBehaviour
     {
         if (setSpawnerNumSlider.value == 1)
         {
-            setting1.SetActive(true);
-            setting2.SetActive(false);
-            setting3.SetActive(false);
+            setting1GameObject.SetActive(true);
+            setting2GameObject.SetActive(false);
+            setting3GameObject.SetActive(false);
         }
         else if (setSpawnerNumSlider.value == 2)
         {
-            setting1.SetActive(true);
-            setting2.SetActive(true);
-            setting3.SetActive(false);
+            setting1GameObject.SetActive(true);
+            setting2GameObject.SetActive(true);
+            setting3GameObject.SetActive(false);
         }
         else
         {
-            setting1.SetActive(true);
-            setting2.SetActive(true);
-            setting3.SetActive(true);
+            setting1GameObject.SetActive(true);
+            setting2GameObject.SetActive(true);
+            setting3GameObject.SetActive(true);
         }
     }
 
@@ -58,6 +71,21 @@ public class SpawnerSettingsManager : MonoBehaviour
     }
     public void Save()
     {
-
+        if (setSpawnerNumSlider.value == 1)
+        {
+            if(spawerType1Dropdown.value == 0)
+        }
+        else if (setSpawnerNumSlider.value == 2)
+        {
+            setting1GameObject.SetActive(true);
+            setting2GameObject.SetActive(true);
+            setting3GameObject.SetActive(false);
+        }
+        else
+        {
+            setting1GameObject.SetActive(true);
+            setting2GameObject.SetActive(true);
+            setting3GameObject.SetActive(true);
+        }
     }
 }

@@ -4651,14 +4651,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setSpawnerNumSlider: {fileID: 2033910140}
-  setting1: {fileID: 1770395750}
-  setting2: {fileID: 1146334720}
-  setting3: {fileID: 454702930}
+  setting1GameObject: {fileID: 0}
+  spawerType1Dropdown: {fileID: 0}
   finiteSpawnerData1: {fileID: 0}
-  finiteSpawnerData2: {fileID: 0}
-  finiteSpawnerData3: {fileID: 0}
   infiniteSpawnerData1: {fileID: 0}
+  setting2GameObject: {fileID: 0}
+  spawerType2Dropdown: {fileID: 0}
+  finiteSpawnerData2: {fileID: 0}
   infiniteSpawnerData2: {fileID: 0}
+  setting3GameObject: {fileID: 0}
+  spawerType3Dropdown: {fileID: 0}
+  finiteSpawnerData3: {fileID: 0}
   infiniteSpawnerData3: {fileID: 0}
 --- !u!1 &402769348
 GameObject:
