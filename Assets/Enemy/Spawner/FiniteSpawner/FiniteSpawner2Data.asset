@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b4aaf4fd210484f811051b0760564d, type: 3}
   m_Name: FiniteSpawner2Data
   m_EditorClassIdentifier: 
+  active: 0
   enemysList:
   - {fileID: 178954259258862752, guid: 63e45e96a4ea2464e863ce867fe632bf, type: 3}
   - {fileID: 3287389250009412284, guid: 32300a44f70791c429937e49bca135fa, type: 3}

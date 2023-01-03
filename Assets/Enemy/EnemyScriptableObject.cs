@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu( fileName = "EnemyData", menuName = "Enemy/EnemyData")]
+[SerializeField]
 public class EnemyScriptableObject : ScriptableObject
 {
     [SerializeField] int hp = 1;

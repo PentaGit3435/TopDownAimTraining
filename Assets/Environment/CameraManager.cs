@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-    [SerializeField]Transform player;
-    void Start()
+    [SerializeField] EnvironmentScriptableObject environmentScriptableObject;
+    [SerializeField] Transform player;
+    void Awake()
     {
+        Camera.main.orthographicSize = environmentScriptableObject.CameraView;
         transform.LookAt(player);
     }
 }

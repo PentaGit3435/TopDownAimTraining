@@ -7,25 +7,33 @@ using TMPro;
 
 public class PlaySceneSettingsManager : MonoBehaviour
 {
+    //--INPUT--//
     [SerializeField] Slider cameraViewSlider;
     [SerializeField] Toggle haveTimeLimitToggle;
     [SerializeField] GameObject inputFieldGameObject;
     [SerializeField] TMP_InputField minTMP;
     [SerializeField] TMP_InputField segTMP;
 
+    [SerializeField] TMP_InputField bulletSpeedInputField;
+
     [SerializeField] Slider staticTargetSizeSlider;
     [SerializeField] Slider moveTargetSizeSlider;
     [SerializeField] Slider randomMoveTargetSizeSlider;
     [SerializeField] Slider teleportTargetSizeSlider;
 
+    //--OUTPUT--//
     [SerializeField] EnvironmentScriptableObject environmentData;
+    [SerializeField] BulletScriptableObject bulletScriptableObject;
 
     [SerializeField] EnemyScriptableObject staticTargetData;
     [SerializeField] MoveEnemyScriptableObject moveTargetData;
     [SerializeField] NeedRandomPointEnemyScriptableObject randomMoveTargetData;
     [SerializeField] NeedRandomPointEnemyScriptableObject teleportTargetData;
 
-
+    private void Start()
+    {
+        SetEnvironmentData();
+    }
     void SetEnvironmentData()
     {
         //camera view
@@ -38,6 +46,8 @@ public class PlaySceneSettingsManager : MonoBehaviour
             minTMP.text = environmentData.Min.ToString();
             segTMP.text = environmentData.Seg.ToString();
         }
+        //bullet speed
+        bulletSpeedInputField.text = bulletScriptableObject.Speed.ToString();
 
         //targets size
         staticTargetSizeSlider.value = staticTargetData.Size;
@@ -61,6 +71,10 @@ public class PlaySceneSettingsManager : MonoBehaviour
     public void SegInputField()
     {
         if (segTMP.text != "") segTMP.text = Mathf.Clamp(int.Parse(segTMP.text), 0, 59) + "";
+    }
+    public void BulletSpeedInputField()
+    {
+        bulletScriptableObject.Speed = bulletSpeedInputField.text == "" ? 70 : float.Parse(bulletSpeedInputField.text);
     }
 
     public void NextScene()

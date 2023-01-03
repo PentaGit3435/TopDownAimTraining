@@ -5,12 +5,10 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "InfiniteSpawnerData", menuName = "Spawner/InfiniteSpawnerData")]
 public class InfiniteSpawnerScriptableObject : SpawnerScriptableObject
 {
-    bool active;
-    [SerializeField] float randomSpawnTime1;
-    [SerializeField] float randomSpawnTime2;
+    [SerializeField] float minRandomTime;
+    [SerializeField] float maxRandomTime;
 
 
-    public bool Active { get => active; set => active = value; }
-    public float RandomSpawnTime1 { get => randomSpawnTime1; set => randomSpawnTime1 = value; }
-    public float RandomSpawnTime2 { get => randomSpawnTime2; set => randomSpawnTime2 = value; }
+    public float MinRandomTime { get => minRandomTime; set => minRandomTime = value; }
+    public float MaxRandomTime { get => maxRandomTime; set => maxRandomTime = value; }
 }

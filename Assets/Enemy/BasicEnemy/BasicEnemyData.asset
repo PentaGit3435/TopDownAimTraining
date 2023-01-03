@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 1
   timeLimit: Infinity
-  size: 4
+  size: 0.5

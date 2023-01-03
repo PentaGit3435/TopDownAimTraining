@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "NeedRandomPointEnemyData", menuName = "Enemy/NeedRandomPointEnemyData")]
+[SerializeField]
 public class NeedRandomPointEnemyScriptableObject : EnemyScriptableObject
 {
     [SerializeField] float setRandomPointTime;

@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac9567859ea7018408d61dbe5ab835e5, type: 3}
-  m_Name: NeedRandomPointEnemyData
+  m_Script: {fileID: 11500000, guid: f74708a972109dd44a50f4a89042a801, type: 3}
+  m_Name: RandomMoveEnemyData
   m_EditorClassIdentifier: 
   hp: 1
   timeLimit: Infinity
   size: 4
-  setRandomPointTime: 1
+  setRandomPointTime: 15
+  speed: 10

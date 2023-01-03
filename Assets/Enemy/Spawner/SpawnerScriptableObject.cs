@@ -5,7 +5,11 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SpawnerData", menuName ="Spawner/SpawnerData")]
 public class SpawnerScriptableObject : ScriptableObject
 {
-    [SerializeField] GameObject[] enemysList;
+    [SerializeField] bool active = false;
+    [SerializeField] List<GameObject> enemysList = new List<GameObject>();
 
-    public GameObject[] EnemysList { get => enemysList; set => enemysList = value; }
+
+
+    public bool Active { get => active; set => active = value; }
+    public List<GameObject> EnemysList { get => enemysList; set => enemysList = value; }
 }

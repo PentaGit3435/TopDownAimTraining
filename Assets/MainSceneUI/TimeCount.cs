@@ -1,19 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 using TMPro;
 
 public class TimeCount : MonoBehaviour
 {
+    [SerializeField] EnvironmentScriptableObject environmentScriptableObject;
     TextMeshProUGUI textMeshProUGUI;
+    float time;
     private void Awake()
     {
+        if (environmentScriptableObject.HaveTimeLimit)
+        {
+            DestroyImmediate(this);
+        }
+    }
+    private void Start()
+    {
         textMeshProUGUI = GetComponent<TextMeshProUGUI>();
+        time = 0;
     }
     void Update()
     {
-        textMeshProUGUI.text = SegToMinSeg(Time.realtimeSinceStartup);
+        time += Time.deltaTime;
+        textMeshProUGUI.text = SegToMinSeg(time);
     }
     string SegToMinSeg(float time)
     {

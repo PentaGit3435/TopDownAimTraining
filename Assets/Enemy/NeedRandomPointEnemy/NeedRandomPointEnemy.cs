@@ -6,7 +6,7 @@ public class NeedRandomPointEnemy : Enemy
 {
     protected Transform vertice1;
     protected Transform vertice2;
-    [SerializeField]protected NeedRandomPointEnemyScriptableObject needRandomPointEnemyData;
+    [SerializeField] protected NeedRandomPointEnemyScriptableObject needRandomPointEnemyData;
     private void Awake()
     {
         vertice1 = GameObject.FindGameObjectWithTag("Vertice1").transform;

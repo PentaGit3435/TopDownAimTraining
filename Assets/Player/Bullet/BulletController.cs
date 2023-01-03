@@ -8,7 +8,7 @@ public class BulletController : MonoBehaviour
     [SerializeField] GameObject bulletCollisionParticle;
     private void Start()
     {
-        Invoke("DestroyBullet", 1.5f);
+        Invoke("DestroyBullet", 90 / bulletData.Speed);
     }
     void Update()
     {

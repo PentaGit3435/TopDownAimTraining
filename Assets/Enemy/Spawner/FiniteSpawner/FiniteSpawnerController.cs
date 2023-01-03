@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class FiniteSpawnerController : MonoBehaviour
 {
-    [SerializeField]FiniteSpawnerScriptableObject spawnerData;
+    [SerializeField] FiniteSpawnerScriptableObject spawnerData;
     [SerializeField] Transform vertice1;
     [SerializeField] Transform vertice2;
 
     Queue enemys;
 
-
+    private void OnEnable()
+    {
+        if (!spawnerData.Active) Destroy(this.gameObject);
+    }
     void Start()
     {
         enemys = new Queue(spawnerData.EnemysList);

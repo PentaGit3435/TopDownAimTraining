@@ -8,35 +8,31 @@ public class SpawnerSettingsManager : MonoBehaviour
 {
     [SerializeField] Slider setSpawnerNumSlider;
 
-    
+    [SerializeField] EnvironmentScriptableObject environmentScriptableObject;
+
     [Header("settings1")]
     [SerializeField] GameObject setting1GameObject;
-    [SerializeField] Dropdown spawerType1Dropdown;
-    //data                              
-    [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData1;
-    [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawnerData1;
+    //[SerializeField] InfiniteSpawnerScriptableObject infiniteSpawner1ScriptableObject;
+    //[SerializeField] FiniteSpawnerScriptableObject finiteSpawner1ScriptableObject;
                                         
                                         
     [Header("settings2")]               
     [SerializeField] GameObject setting2GameObject;
-    [SerializeField] Dropdown spawerType2Dropdown;
-    //data                              
-    [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData2;
-    [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawnerData2;
-                                        
-                                        
+    [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawner2ScriptableObject;
+    [SerializeField] FiniteSpawnerScriptableObject finiteSpawner2ScriptableObject;
+
+
     [Header("settings3")]               
     [SerializeField] GameObject setting3GameObject;
-    [SerializeField] Dropdown spawerType3Dropdown;
-    //data
-    [SerializeField] FiniteSpawnerScriptableObject finiteSpawnerData3;
-    [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawnerData3;
-
+    [SerializeField] InfiniteSpawnerScriptableObject infiniteSpawner3ScriptableObject;
+    [SerializeField] FiniteSpawnerScriptableObject finiteSpawner3ScriptableObject;
 
     private void Start()
     {
+        SetNumSpawnerSliderData();
         OnSpawnerNumSliderChanged();
     }
+    //on spawner num slider change
     public void OnSpawnerNumSliderChanged()
     {
         if (setSpawnerNumSlider.value == 1)
@@ -44,12 +40,23 @@ public class SpawnerSettingsManager : MonoBehaviour
             setting1GameObject.SetActive(true);
             setting2GameObject.SetActive(false);
             setting3GameObject.SetActive(false);
+
+            //spawnerData
+            infiniteSpawner2ScriptableObject.Active = false;
+            finiteSpawner2ScriptableObject.Active = false;
+
+            infiniteSpawner3ScriptableObject.Active = false;
+            finiteSpawner3ScriptableObject.Active = false;
         }
         else if (setSpawnerNumSlider.value == 2)
         {
             setting1GameObject.SetActive(true);
             setting2GameObject.SetActive(true);
             setting3GameObject.SetActive(false);
+
+            //spawnerData
+            infiniteSpawner3ScriptableObject.Active = false;
+            finiteSpawner3ScriptableObject.Active = false;
         }
         else
         {
@@ -59,8 +66,24 @@ public class SpawnerSettingsManager : MonoBehaviour
         }
     }
 
+    //setData
+    void SetNumSpawnerSliderData()
+    {
+        if (infiniteSpawner2ScriptableObject.Active == false && finiteSpawner2ScriptableObject.Active == false && infiniteSpawner3ScriptableObject.Active == false && finiteSpawner3ScriptableObject.Active == false)
+        {
+            setSpawnerNumSlider.value = 1;
+        }
+        else if (infiniteSpawner3ScriptableObject.Active == false && finiteSpawner3ScriptableObject.Active == false)
+        {
+            setSpawnerNumSlider.value = 2;
+        }
+        else
+        {
+            setSpawnerNumSlider.value = 3;
+        }
+    }
 
-
+    //changeScene
     public void NextScene()
     {
         SceneManager.LoadScene(1);
@@ -69,23 +92,24 @@ public class SpawnerSettingsManager : MonoBehaviour
     {
         SceneManager.LoadScene(2);
     }
-    public void Save()
+
+    //save
+    public void SaveSpawnerAmount()
     {
         if (setSpawnerNumSlider.value == 1)
         {
-            if(spawerType1Dropdown.value == 0)
+            infiniteSpawner2ScriptableObject.Active = false;
+            finiteSpawner2ScriptableObject.Active = false;
+
+            infiniteSpawner3ScriptableObject.Active = false;
+            finiteSpawner3ScriptableObject.Active = false;
         }
         else if (setSpawnerNumSlider.value == 2)
         {
-            setting1GameObject.SetActive(true);
-            setting2GameObject.SetActive(true);
-            setting3GameObject.SetActive(false);
+            infiniteSpawner3ScriptableObject.Active = false;
+            finiteSpawner3ScriptableObject.Active = false;
         }
-        else
-        {
-            setting1GameObject.SetActive(true);
-            setting2GameObject.SetActive(true);
-            setting3GameObject.SetActive(true);
-        }
+        //all configured
+        environmentScriptableObject.Configured = true;
     }
 }

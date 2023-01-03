@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -632,11 +632,24 @@ MonoBehaviour:
   infinitySpawnerSettings: {fileID: 292962445}
   minSpawnTimeInputField: {fileID: 1714209262}
   maxSpawnTimeInputField: {fileID: 950159552}
+  StaticTarget: {fileID: 1406120568}
+  MoveTarget: {fileID: 747431706}
+  RandomMoveTarget: {fileID: 836424596}
+  teleportTarget: {fileID: 368338602}
+  infiniteSpawnerScriptableObject: {fileID: 11400000, guid: ffa7c2ff659f54f42854869f6490ce43, type: 2}
   finitySpawnerSettings: {fileID: 2035083789}
   enemysList: {fileID: 1065247520}
   addEnemyButton: {fileID: 112723391}
   removeEnemyButton: {fileID: 269350135}
   enemy: {fileID: 5122963223656045569, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
+  startTime: {fileID: 1436346094}
+  repeatTime: {fileID: 1943526140}
+  targets: {fileID: 1065247521}
+  finiteSpawnerScriptableObject: {fileID: 11400000, guid: d006fbad12c236d41b04ee8e54c1128c, type: 2}
+  StaticTargetPrefab: {fileID: 178954259258862752, guid: 63e45e96a4ea2464e863ce867fe632bf, type: 3}
+  MoveTargetPrefab: {fileID: 3287389250009412284, guid: 32300a44f70791c429937e49bca135fa, type: 3}
+  RandomMoveTargetPrefab: {fileID: 2887359708515397025, guid: 4d31a86313f6ec9429c14674a5cee4de, type: 3}
+  teleportTargetPrefab: {fileID: 178954259258862752, guid: 363116fae7a8ace408094b60502ac0b8, type: 3}
 --- !u!1 &67682625
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,7 +720,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &70622491
 RectTransform:
   m_ObjectHideFlags: 0
@@ -962,7 +975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "2,5\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1689,7 +1702,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "2,5\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2040,7 +2053,7 @@ GameObject:
   - component: {fileID: 171545588}
   - component: {fileID: 171545589}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: StaticTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4151,7 +4164,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 1,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -4212,7 +4225,7 @@ GameObject:
   - component: {fileID: 368338601}
   - component: {fileID: 368338602}
   m_Layer: 5
-  m_Name: Toggle (3)
+  m_Name: TeleportTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4299,7 +4312,7 @@ GameObject:
   - component: {fileID: 375075718}
   - component: {fileID: 375075719}
   m_Layer: 5
-  m_Name: Toggle (2)
+  m_Name: RandomMoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4651,18 +4664,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   setSpawnerNumSlider: {fileID: 2033910140}
-  setting1GameObject: {fileID: 0}
-  spawerType1Dropdown: {fileID: 0}
-  finiteSpawnerData1: {fileID: 0}
-  infiniteSpawnerData1: {fileID: 0}
-  setting2GameObject: {fileID: 0}
-  spawerType2Dropdown: {fileID: 0}
-  finiteSpawnerData2: {fileID: 0}
-  infiniteSpawnerData2: {fileID: 0}
-  setting3GameObject: {fileID: 0}
-  spawerType3Dropdown: {fileID: 0}
-  finiteSpawnerData3: {fileID: 0}
-  infiniteSpawnerData3: {fileID: 0}
+  environmentScriptableObject: {fileID: 11400000, guid: a730454d33bdf4348b9cd61dd76e57f5, type: 2}
+  setting1GameObject: {fileID: 1770395750}
+  setting2GameObject: {fileID: 1146334720}
+  infiniteSpawner2ScriptableObject: {fileID: 11400000, guid: bf519b0cf03824947900d52e558f24e7, type: 2}
+  finiteSpawner2ScriptableObject: {fileID: 11400000, guid: a3d548af6fcbbb543ad5b77d536d6ea8, type: 2}
+  setting3GameObject: {fileID: 454702930}
+  infiniteSpawner3ScriptableObject: {fileID: 11400000, guid: ffa7c2ff659f54f42854869f6490ce43, type: 2}
+  finiteSpawner3ScriptableObject: {fileID: 11400000, guid: d006fbad12c236d41b04ee8e54c1128c, type: 2}
 --- !u!1 &402769348
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,7 +5087,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419442183}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -5339,7 +5348,7 @@ GameObject:
   - component: {fileID: 430510067}
   - component: {fileID: 430510068}
   m_Layer: 5
-  m_Name: Toggle (2)
+  m_Name: RandomMoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5864,7 +5873,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 2,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -7233,7 +7242,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.0017089844, y: -0.22829723}
+  m_AnchoredPosition: {x: 0.0017089844, y: -0.22829819}
   m_SizeDelta: {x: 0.005203247, y: 0.4557991}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &594462740
@@ -7399,7 +7408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 609791144}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -8146,7 +8155,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 707849810}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -8570,7 +8579,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 710254913}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -8873,7 +8882,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "1,5\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -9037,7 +9046,7 @@ GameObject:
   - component: {fileID: 747431705}
   - component: {fileID: 747431706}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: MoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9621,7 +9630,7 @@ GameObject:
   - component: {fileID: 836424595}
   - component: {fileID: 836424596}
   m_Layer: 5
-  m_Name: Toggle (2)
+  m_Name: RandomMoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10102,7 +10111,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "1\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -10736,7 +10745,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 2,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -10853,7 +10862,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5122963223656045570, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5122963223656045570, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
       propertyPath: m_AnchorMin.x
@@ -10861,7 +10870,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5122963223656045570, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5122963223656045570, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -10901,11 +10910,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5122963223656045570, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 79.16
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5122963223656045570, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -11.3005
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5122963223656045570, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -11839,6 +11848,54 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1833408740}
+        m_TargetAssemblyTypeName: SpawnerSettingController, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2047729067}
+        m_TargetAssemblyTypeName: SpawnerSettingController, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 56901393}
+        m_TargetAssemblyTypeName: SpawnerSettingController, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 394338720}
+        m_TargetAssemblyTypeName: SpawnerSettingsManager, Assembly-CSharp
+        m_MethodName: SaveSpawnerAmount
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1044156193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11888,7 +11945,7 @@ GameObject:
   - component: {fileID: 1049880095}
   - component: {fileID: 1049880096}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: StaticTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12309,7 +12366,7 @@ GameObject:
   - component: {fileID: 1085827687}
   - component: {fileID: 1085827688}
   m_Layer: 5
-  m_Name: Toggle (3)
+  m_Name: TeleportTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12631,7 +12688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "0,5\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12942,7 +12999,7 @@ GameObject:
   - component: {fileID: 1147234449}
   - component: {fileID: 1147234450}
   m_Layer: 5
-  m_Name: Toggle (3)
+  m_Name: TeleportTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13367,7 +13424,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "1\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -13991,7 +14048,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1266499375}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -14573,7 +14630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1308963120
 RectTransform:
   m_ObjectHideFlags: 0
@@ -15288,7 +15345,7 @@ GameObject:
   - component: {fileID: 1406120567}
   - component: {fileID: 1406120568}
   m_Layer: 5
-  m_Name: Toggle
+  m_Name: StaticTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15974,7 +16031,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 1,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -17470,7 +17527,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "2,5\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -17762,7 +17819,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 2,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -18018,7 +18075,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 0,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -18079,7 +18136,7 @@ GameObject:
   - component: {fileID: 1612408014}
   - component: {fileID: 1612408015}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: MoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -18428,7 +18485,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 1
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -18612,7 +18669,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u200B"
+  m_text: "1\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18828,7 +18885,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 1
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -19190,7 +19247,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 1
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -19383,7 +19440,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756014000}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -20056,11 +20113,24 @@ MonoBehaviour:
   infinitySpawnerSettings: {fileID: 1308963119}
   minSpawnTimeInputField: {fileID: 1691898667}
   maxSpawnTimeInputField: {fileID: 484686246}
+  StaticTarget: {fileID: 1049880096}
+  MoveTarget: {fileID: 1898568838}
+  RandomMoveTarget: {fileID: 375075719}
+  teleportTarget: {fileID: 1085827688}
+  infiniteSpawnerScriptableObject: {fileID: 11400000, guid: aa90e7f071f587f4aa20c610fbf5a058, type: 2}
   finitySpawnerSettings: {fileID: 70622490}
   enemysList: {fileID: 1900370949}
   addEnemyButton: {fileID: 117382211}
   removeEnemyButton: {fileID: 708167055}
   enemy: {fileID: 5122963223656045569, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
+  startTime: {fileID: 1901671266}
+  repeatTime: {fileID: 1600860079}
+  targets: {fileID: 1900370950}
+  finiteSpawnerScriptableObject: {fileID: 11400000, guid: 9e9bbaf3cf36e7445a28cc17135c8d82, type: 2}
+  StaticTargetPrefab: {fileID: 178954259258862752, guid: 63e45e96a4ea2464e863ce867fe632bf, type: 3}
+  MoveTargetPrefab: {fileID: 3287389250009412284, guid: 32300a44f70791c429937e49bca135fa, type: 3}
+  RandomMoveTargetPrefab: {fileID: 2887359708515397025, guid: 4d31a86313f6ec9429c14674a5cee4de, type: 3}
+  teleportTargetPrefab: {fileID: 178954259258862752, guid: 363116fae7a8ace408094b60502ac0b8, type: 3}
 --- !u!1 &1842515637
 GameObject:
   m_ObjectHideFlags: 0
@@ -20457,7 +20527,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 0,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -20940,7 +21010,7 @@ GameObject:
   - component: {fileID: 1898568837}
   - component: {fileID: 1898568838}
   m_Layer: 5
-  m_Name: Toggle (1)
+  m_Name: MoveTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -21206,7 +21276,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 1,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -21680,7 +21750,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1935457698}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -21896,7 +21966,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: 
+  m_Text: 0,5
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -22460,11 +22530,24 @@ MonoBehaviour:
   infinitySpawnerSettings: {fileID: 3680415}
   minSpawnTimeInputField: {fileID: 1748631343}
   maxSpawnTimeInputField: {fileID: 1575854280}
+  StaticTarget: {fileID: 171545589}
+  MoveTarget: {fileID: 1612408015}
+  RandomMoveTarget: {fileID: 430510068}
+  teleportTarget: {fileID: 1147234450}
+  infiniteSpawnerScriptableObject: {fileID: 11400000, guid: bf519b0cf03824947900d52e558f24e7, type: 2}
   finitySpawnerSettings: {fileID: 494123483}
   enemysList: {fileID: 1518734439}
   addEnemyButton: {fileID: 489179028}
   removeEnemyButton: {fileID: 808780680}
   enemy: {fileID: 5122963223656045569, guid: e77d04c0066533d4db454f96598f4dd6, type: 3}
+  startTime: {fileID: 357968659}
+  repeatTime: {fileID: 1877805870}
+  targets: {fileID: 1518734440}
+  finiteSpawnerScriptableObject: {fileID: 11400000, guid: a3d548af6fcbbb543ad5b77d536d6ea8, type: 2}
+  StaticTargetPrefab: {fileID: 178954259258862752, guid: 63e45e96a4ea2464e863ce867fe632bf, type: 3}
+  MoveTargetPrefab: {fileID: 3287389250009412284, guid: 32300a44f70791c429937e49bca135fa, type: 3}
+  RandomMoveTargetPrefab: {fileID: 2887359708515397025, guid: 4d31a86313f6ec9429c14674a5cee4de, type: 3}
+  teleportTargetPrefab: {fileID: 178954259258862752, guid: 363116fae7a8ace408094b60502ac0b8, type: 3}
 --- !u!1 &2076887347
 GameObject:
   m_ObjectHideFlags: 0
@@ -22666,7 +22749,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092369559}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

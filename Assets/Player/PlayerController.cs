@@ -15,13 +15,16 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //ray = new Ray(Camera.main.transform.position, Camera.main.transform.position - Input.mousePosition);
-        ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(ray, out hit, float.MaxValue,raycastLayerHit))
+        if (!Pause.IsPaused && !Timer.IsTimeOut)
         {
-            crosshairPosition = hit.point;
-            transform.LookAt(crosshairPosition);
+            ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out hit, float.MaxValue, raycastLayerHit))
+            {
+                crosshairPosition = hit.point;
+                transform.LookAt(crosshairPosition);
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse0)) Shot();
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0)) Shot();
     }
     void Shot()
     {

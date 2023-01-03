@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f8b34a702be08943b0e789d49e1a32d, type: 3}
   m_Name: InfiniteSpawner2Data
   m_EditorClassIdentifier: 
+  active: 0
   enemysList:
   - {fileID: 178954259258862752, guid: 63e45e96a4ea2464e863ce867fe632bf, type: 3}
-  randomSpawnTime1: 0.4
-  randomSpawnTime2: 1
+  minRandomTime: 1
+  maxRandomTime: 2.5

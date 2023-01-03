@@ -34,7 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2322094054036876434
 MeshFilter:
@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 56227c4cf33de6e45b153077a836d535, type: 2}
+  - {fileID: 2100000, guid: 3f433fbacb43ad34b83df4ecae88d843, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -127,5 +127,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2071d5dca5b435043929ccec43c807eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 3440369ab43f12e408925223cd1912bb, type: 2}
-  needRandomPointEnemyData: {fileID: 11400000, guid: 3440369ab43f12e408925223cd1912bb, type: 2}
+  enemyData: {fileID: 11400000, guid: 947899958ca370842a05a12520332deb, type: 2}
+  needRandomPointEnemyData: {fileID: 11400000, guid: 947899958ca370842a05a12520332deb, type: 2}
+  randomMoveEnemyScriptableObject: {fileID: 11400000, guid: 947899958ca370842a05a12520332deb, type: 2}

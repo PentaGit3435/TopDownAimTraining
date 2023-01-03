@@ -7,10 +7,10 @@ public class Enemy : MonoBehaviour
     [SerializeField]EnemyScriptableObject enemyData;
     int hp;
 
-    private void Awake()
+    private void OnEnable()
     {
-        hp = enemyData.Hp;
-        transform.localScale = new Vector3(enemyData.Size, enemyData.Size, enemyData.Size);
+        hp = enemyData.Hp; 
+        SetSize();
         Invoke("EnemyTimeLimit", enemyData.TimeLimit);
     }
     public void Damage(int damage)
@@ -30,5 +30,9 @@ public class Enemy : MonoBehaviour
     {
         MissCount.Instance.ChangeMissCount(1);
         Destroy(gameObject);
+    }
+    public void SetSize()
+    {
+        transform.localScale = Vector3.one * enemyData.Size;
     }
 }

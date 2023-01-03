@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class RandomMoveEnemy : NeedRandomPointEnemy
 {
-    Vector3 randomDirection;
+    [SerializeField] RandomMoveEnemyScriptableObject randomMoveEnemyScriptableObject;
+
+    Vector3 randomPoint;
     void Start()
     {
-        InvokeRepeating("SetRandomDirection", 0, needRandomPointEnemyData.SetRandomPointTime);
+        randomPoint = GetRadomPoint();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        transform.Translate(randomDirection * 10 * Time.deltaTime);
+        if(Mathf.RoundToInt(randomPoint.x) == Mathf.RoundToInt(transform.position.x) && Mathf.RoundToInt(randomPoint.z) == Mathf.RoundToInt(transform.position.z))
+        {
+            randomPoint = GetRadomPoint();
+        }
+        MoveTo();
     }
-    private void SetRandomDirection()
+    private void MoveTo()
     {
-        randomDirection = (GetRadomPoint() - transform.position).normalized;
-    }
-    protected override Vector3 GetRadomPoint()
-    {
-        return new Vector3(Random.Range(vertice1.position.x/0.12f, vertice2.position.x/0.12f), transform.position.y, Random.Range(vertice1.position.z/0.12f, vertice2.position.z/0.12f));
+        transform.position += (randomPoint - transform.position).normalized * randomMoveEnemyScriptableObject.Speed * Time.deltaTime;
     }
 }

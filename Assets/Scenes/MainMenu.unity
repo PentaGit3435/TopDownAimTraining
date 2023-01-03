@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731704, g: 0.13414727, b: 0.121078536, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -401,6 +401,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591613992}
   m_CullTransparentMesh: 1
+--- !u!1 &654000427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 654000429}
+  - component: {fileID: 654000428}
+  m_Layer: 0
+  m_Name: SaveAndLoadGameData
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &654000428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654000427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 916503f8ffab53148bae5b5af9aeab9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyScriptableObject: {fileID: 11400000, guid: e0ff424a08e60374f8d60f2adec4fa9d, type: 2}
+  moveEnemyScriptableObject: {fileID: 11400000, guid: b6459c3528b73f8479ace9489ce3235f, type: 2}
+  randomMoveEnemyScriptableObject: {fileID: 11400000, guid: 947899958ca370842a05a12520332deb, type: 2}
+  teleportEnemyScriptableObject: {fileID: 11400000, guid: c3dcfc47c61975442b98d002c1632074, type: 2}
+  infiniteSpawnerScriptableObject1: {fileID: 11400000, guid: aa90e7f071f587f4aa20c610fbf5a058, type: 2}
+  infiniteSpawnerScriptableObject2: {fileID: 11400000, guid: bf519b0cf03824947900d52e558f24e7, type: 2}
+  infiniteSpawnerScriptableObject3: {fileID: 11400000, guid: ffa7c2ff659f54f42854869f6490ce43, type: 2}
+  finiteSpawnerScriptableObject1: {fileID: 11400000, guid: 9e9bbaf3cf36e7445a28cc17135c8d82, type: 2}
+  finiteSpawnerScriptableObject2: {fileID: 11400000, guid: a3d548af6fcbbb543ad5b77d536d6ea8, type: 2}
+  finiteSpawnerScriptableObject3: {fileID: 11400000, guid: d006fbad12c236d41b04ee8e54c1128c, type: 2}
+  environmentScriptableObject: {fileID: 11400000, guid: a730454d33bdf4348b9cd61dd76e57f5, type: 2}
+--- !u!4 &654000429
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654000427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.789333, y: -217.09071, z: 27.825592}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &932674376
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e932630f8a840347a649bc8e1f8d0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  environmentScriptableObject: {fileID: 11400000, guid: a730454d33bdf4348b9cd61dd76e57f5, type: 2}
 --- !u!4 &1995253162
 Transform:
   m_ObjectHideFlags: 0
