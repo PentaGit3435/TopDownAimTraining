@@ -14,4 +14,12 @@ public class ButtonManager : MonoBehaviour
     {
         SceneManager.LoadScene(1);
     }
+    public void OnEnableDisableFullScreenButtonPressed()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
+    public void OnExitButtonPressed()
+    {
+        Application.Quit();
+    }
 }

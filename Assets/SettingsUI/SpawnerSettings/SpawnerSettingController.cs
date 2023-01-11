@@ -25,6 +25,7 @@ public class SpawnerSettingController : MonoBehaviour
     [SerializeField] GameObject enemysList;
     [SerializeField] GameObject addEnemyButton;
     [SerializeField] GameObject removeEnemyButton;
+    [SerializeField] GameObject scroll;
     [SerializeField] GameObject enemy;
     [SerializeField] TMP_InputField startTime;
     [SerializeField] TMP_InputField repeatTime;
@@ -144,17 +145,19 @@ public class SpawnerSettingController : MonoBehaviour
     //finitySpawnerMethods
     public void SelectEnemysButton()
     {
-        if (enemysList.activeSelf)
+        if (scroll.activeSelf)
         {
-            enemysList.SetActive(false);
+            //enemysList.SetActive(false);
             addEnemyButton.SetActive(false);
             removeEnemyButton.SetActive(false);
+            scroll.SetActive(false);
         }
         else
         {
-            enemysList.SetActive(true);
+            //enemysList.SetActive(true);
             addEnemyButton.SetActive(true);
             removeEnemyButton.SetActive(true);
+            scroll.SetActive(true);
         }
     }
     public void OnPlusButtonActive()

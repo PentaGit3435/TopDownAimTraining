@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4b4aaf4fd210484f811051b0760564d, type: 3}
   m_Name: FiniteSpawner1Data
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   enemysList: []
-  startTime: 0
-  repeatTime: 0.1
+  startTime: 1.5
+  repeatTime: 0.5

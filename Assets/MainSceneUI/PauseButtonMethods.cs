@@ -15,4 +15,8 @@ public class PauseButtonMethods : MonoBehaviour
         Time.timeScale = 1;
         SceneManager.LoadScene(0);
     }
+    public void ScreenSize()
+    {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 }

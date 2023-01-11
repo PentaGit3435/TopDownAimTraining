@@ -87,6 +87,8 @@ public class SpawnerSettingsManager : MonoBehaviour
     public void NextScene()
     {
         SceneManager.LoadScene(1);
+        //all configured
+        environmentScriptableObject.Configured = true;
     }
     public void PreviousScene()
     {
@@ -109,7 +111,5 @@ public class SpawnerSettingsManager : MonoBehaviour
             infiniteSpawner3ScriptableObject.Active = false;
             finiteSpawner3ScriptableObject.Active = false;
         }
-        //all configured
-        environmentScriptableObject.Configured = true;
     }
 }

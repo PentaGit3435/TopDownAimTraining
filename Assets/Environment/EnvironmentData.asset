@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 619197637d5702442ac45a59038f15a4, type: 3}
   m_Name: EnvironmentData
   m_EditorClassIdentifier: 
-  cameraView: 40
+  cameraView: 20
   haveTimeLimit: 0
-  min: 0
-  seg: 10
+  min: 1
+  seg: 0
   configured: 0

@@ -15,5 +15,8 @@ MonoBehaviour:
   active: 0
   enemysList:
   - {fileID: 178954259258862752, guid: 63e45e96a4ea2464e863ce867fe632bf, type: 3}
+  - {fileID: 3287389250009412284, guid: 32300a44f70791c429937e49bca135fa, type: 3}
+  - {fileID: 2887359708515397025, guid: 4d31a86313f6ec9429c14674a5cee4de, type: 3}
+  - {fileID: 178954259258862752, guid: 363116fae7a8ace408094b60502ac0b8, type: 3}
   minRandomTime: 1
   maxRandomTime: 2.5

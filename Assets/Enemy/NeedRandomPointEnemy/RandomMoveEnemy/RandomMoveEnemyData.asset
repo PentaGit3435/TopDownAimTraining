@@ -15,5 +15,5 @@ MonoBehaviour:
   hp: 1
   timeLimit: Infinity
   size: 4
-  setRandomPointTime: 15
-  speed: 10
+  setRandomPointTime: 1
+  speed: 20

@@ -29,6 +29,10 @@ public class TargetSettingsManager : MonoBehaviour
     [SerializeField] private TMP_InputField teleportTargetChangePointTimeInputField;
     [SerializeField] private NeedRandomPointEnemyScriptableObject teleportEnemyScriptableObject;
 
+    private void Start()
+    {
+        SetInputFieldData();
+    }
 
     public void NextScene()
     {
@@ -37,6 +41,27 @@ public class TargetSettingsManager : MonoBehaviour
     public void PreviousScene()
     {
         SceneManager.LoadScene(1);
+    }
+    public void SetInputFieldData()
+    {
+        //staticTarget
+        staticTargetHPInputField.text = enemyScriptableObject.Hp.ToString();
+        staticTargetTimeLimitInputField.text = enemyScriptableObject.TimeLimit.ToString();
+
+        //moveTarget
+        moveTargetHPInputField.text = moveEnemyScriptableObject.Hp.ToString();
+        moveTargetTimeLimitInputField.text = moveEnemyScriptableObject.TimeLimit.ToString();
+        moveTargetSpeedInputField.text = moveEnemyScriptableObject.Speed.ToString();
+
+        //randomMoveTarget
+        randomMoveTargetHPInputField.text = randomMoveEnemyScriptableObject.Hp.ToString();
+        randomMoveTargetTimeLimitInputField.text = randomMoveEnemyScriptableObject.TimeLimit.ToString();
+        randomMoveTargetSpeedInputField.text = randomMoveEnemyScriptableObject.Speed.ToString();
+
+        //teleportTarget
+        teleportTargetHPInputField.text = teleportEnemyScriptableObject.Hp.ToString();
+        teleportTargetTimeLimitInputField.text = teleportEnemyScriptableObject.TimeLimit.ToString();
+        teleportTargetChangePointTimeInputField.text = teleportEnemyScriptableObject.SetRandomPointTime.ToString();
     }
     public void Save()
     {

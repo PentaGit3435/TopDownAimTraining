@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: InfiniteSpawner3Data
   m_EditorClassIdentifier: 
   active: 0
-  enemysList:
-  - {fileID: 178954259258862752, guid: 63e45e96a4ea2464e863ce867fe632bf, type: 3}
-  minRandomTime: 1
-  maxRandomTime: 2.5
+  enemysList: []
+  minRandomTime: 0.5
+  maxRandomTime: 1
